@@ -12,7 +12,6 @@ void jack_bauer(void)
 	{
 		int h, m;
 
-
 		for (m = 0; m < 60; m++)
 		{
 			_putchar((h / 10) + '0');
@@ -25,4 +24,3 @@ void jack_bauer(void)
 	}
 }
 
-	
