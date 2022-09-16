@@ -4,21 +4,19 @@
 /**
  * print_most_numbers - prints numbers except 2 and 4
  *
- * Return: returns nothing
+ * Return: 0-9, excluding 2 and 4, following by new line
  */
-
 void print_most_numbers(void)
 {
-	int n;
+	int i;
 
-	for (n = 48; n < 58; n++
+	for (i = 0; i <= 9; i++)
 	{
-		if ((n == 50) || (n == 52))
-		{
+		if ((i == 2) || (i == 4))
 			continue;
-		}
-		putchar(n);
+		else
+			_putchar(i + '0');
 	}
-	putchar(10);
+	_putchar('\n');
 }
 
