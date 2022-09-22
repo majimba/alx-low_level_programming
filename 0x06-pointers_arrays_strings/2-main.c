@@ -1,28 +1,42 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * _strncpy - cpoies n bytes of src to the dest string
- * @dest: string to copy to
- * @src: string being copied
- * @n: largest number of bytes to copy
+ * main - check the code
  *
- * Return: address of dest
+ * Return: Always 0.
  */
-char *_strncpy(char *dest, char *src, int n)
+int main(void)
 {
+	char s1[98];
+	char *ptr;
 	int i;
 
-	i = 0;
-	while (i < n && *(src + i))
+	for (i = 0; i < 98 - 1; i++)
 	{
-		*(dest + i) = *(src + i);
-		i++;
+		s1[i] = '*';
 	}
-	while (i < n)
+	s1[i] = '\0';
+	printf("%s\n", s1);
+	ptr = _strncpy(s1, "First, solve the problem. Then, write the code\n", 5);
+	printf("%s\n", s1);
+	printf("%s\n", ptr);
+	ptr = _strncpy(s1, "First, solve the problem. Then, write the code\n", 90);
+	printf("%s", s1);
+	printf("%s", ptr);
+	for (i = 0; i < 98; i++)
 	{
-		*(dest + i) = '\0';
-		i++;
+		if (i % 10)
+		{
+			printf(" ");
+		}
+		if (!(i % 10) && i)
+		{
+			printf("\n");
+		}
+		printf("0x%02x", s1[i]);
 	}
-	return (dest);
+	printf("\n");
+	return (0);
 }
 
