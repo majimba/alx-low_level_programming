@@ -11,7 +11,7 @@
 
 void free_grid(int **grid, int height)
 {
-        int y;
+	int y;
 
 	if (grid == NULL || grid == 0)
 	{
@@ -23,4 +23,3 @@ void free_grid(int **grid, int height)
 	}
 	free(grid);
 }
-
