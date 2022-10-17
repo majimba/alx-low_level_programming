@@ -13,32 +13,54 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i, j, k;
-	dog_t *p;
+	dog_t *new_d;
 
-	p = malloc(sizeof(dog_t));
-
-	if (p == NULL)
-	{
-		free(p);
+	new_d = malloc(sizeof(dog_t));
+	if (new_d == NULL)
 		return (NULL);
+	if (name == NULL)
+		new_d->name = NULL;
+	else
+	{
+		new_d->name = malloc(_strlen(name) + 1);
+		if (new_d->name == NULL)
+		{
+			free(new_d);
+			return (NULL);
+		}
+		new_d->name = _strcpy(new_d->name, name);
 	}
-	for (i = 0; name[i]; i++)
-		;
-	p->name = malloc(i + 1);
-	p->owner = malloc(j + 1);
+	if (owner == NULL)
+		new_d->owner = NULL;
+	else
+	{
+		new_d->owner = malloc(_strlen(owner) + 1);
+		if (new_d->owner == NULL)
+		{
+			free(new_d->name);
+			free(new_d);
+			return (NULL);
+		}
+		new_d->owner = _strcpy(new_d->owner, owner);
+	}
+	new_d->age = age;
+	return (new_d);
+}
+/**
+ * _strcpy - copies string from src to dest
+ *
+ * @dest: pointer to destination of string
+ * @src: pointer to source string to copy from
+ *
+ * Return: pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	char *temp = dest;
 
-	if (p->name == NULL || p->owner == NULL)
-	{
-		free(p->name), free(p->owner), free(p);
-		return (NULL);
-	}
-	for (k = 0; k < i; k++)
-	{
-		p->name[k] = name[k];
-	}
-	p->owner[k] = '\0';
-	p->age = age;
-	return (p);
+	while (*src)
+		*temp++ = *src++;
+	*temp = '\0';
+	return (dest);
 }
 
