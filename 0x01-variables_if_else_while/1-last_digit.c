@@ -4,10 +4,8 @@
 /* more headers goes there */
 
 /**
- * main - Entry poin
- * 
+ * main - Entry point
  * Description: 'Print random number to variable n each time it is executed'
- *
  * Return: Always 0 (Success)
  */
 int main(void)
