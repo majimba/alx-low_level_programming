@@ -6,7 +6,7 @@
 /**
  * main - Entry poin
  * 
- *Description: 'Print a random number to the variable n each time it is executed'
+ * Description: 'Print random number to variable n each time it is executed'
  *
  * Return: Always 0 (Success)
  */
