@@ -1,24 +1,22 @@
 #include "main.h"
-
 /**
- * jack_bauer - prints time table in this format: HH:MM
- * Return: the sum of two numbers.
+ * jack_bauer -  count down 24hrs
+ *
+ * Return: void.
  */
-void jack_bauer(void)
+void  jack_bauer(void)
 {
-	int h, m;
+	int H, M;
 
-	for (h = 0; h < 24; h++)
+	for (H = 0; H < 24; H++)
 	{
-		int h, m;
-
-		for (m = 0; m < 60; m++)
+		for (M = 0; M < 60; M++)
 		{
-			_putchar((h / 10) + '0');
-			_putchar((h % 10) + '0');
+			_putchar((H / 10) + '0');
+			_putchar((H % 10) + '0');
 			_putchar(':');
-			_putchar((m / 10) + '0');
-			_putchar((m % 10) + '0');
+			_putchar((M / 10) + '0');
+			_putchar((M % 10) + '0');
 			_putchar('\n');
 		}
 	}
